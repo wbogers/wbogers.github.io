@@ -9,7 +9,7 @@ When I’m programming in Python I usually use [Spyder](https://www.spyder-ide.o
 
 Still, quite recently I started using [Visual Studio Code](https://code.visualstudio.com). The main reason for this was very simple: I was curious. Visual Studio Code has been getting a lot of attention lately as a flexible, extensible, lightweight code editor and I wanted to check whether it would be an interesting tool to add to my Python toolset. For this, it would have to enable me to basically be as productive as I am in Spyder. I must say I was very pleasantly surprised with what Visual Studio Code had to offer after I had found and installed the right extensions. So I want to share some of my experiences about getting Visual Studio Code up and running as a Python IDE.
 
-I initially installed Visual Studio Code just before the July 2018 release. After installing Microsoft’s Python extension I gave it a try and must admit that at first I wasn’t very wowed: as an editor it was pleasant enough to work in, but considering the Spyder experience I was used to it just didn’t do it for me at that moment (especially features like autocomplete and intellisense felt a bit off). However, a couple of weeks later the July 2018 release came along with a *huge* amount of added and improved Python support. One of the most important additions was the  [Python Language Server](https://blogs.msdn.microsoft.com/pythonengineering/2018/07/18/introducing-the-python-language-server/): allthough it was an early version which was included in this release of Visual Studio Code, for me it completely changed the way the editor felt when working with Python. After installing a few additional extensions and tweaking the layout a bit I now find Visual Studio Code to be a very pleasant, fluent environment for Python programming. Below I will describe my setup. Note that I’m working on a MacBook: on a Windows machine there are some small differences (which I will add shortly).
+I initially installed Visual Studio Code just before the July 2018 release. After installing Microsoft’s Python extension I gave it a try and must admit that at first I wasn’t very wowed: as an editor it was pleasant enough to work in, but considering the Spyder experience I was used to it just didn’t do it for me at that moment (especially features like autocomplete and intellisense felt a bit off). However, a couple of weeks later the July 2018 release came along with a *huge* amount of added and improved Python support. One of the most important additions was the  [Python Language Server](https://blogs.msdn.microsoft.com/pythonengineering/2018/07/18/introducing-the-python-language-server/): allthough it was an early version which was included in this release of Visual Studio Code, for me it completely changed the way the editor felt when working with Python. After installing a few additional extensions and tweaking the layout a bit I now find Visual Studio Code to be a very pleasant, fluent environment for Python programming. Below I will describe my setup. Note that I’m working on a MacBook: on a Windows machine there are some small differences (which I have added in a separate table below).
 
 ## Extensions
 
@@ -52,6 +52,14 @@ python.autoComplete.preloadModules | ["Numpy", "Pandas", "Matplotlib”] | Prelo
 workbench.colorTheme | "Tomorrow Night Blue" | Gorgeous color theme.
 
 Note that there are tons of configuration options available to customize Visual Studio Code to your personal preference. You can explore the (very well documented) *User Settings* for this.
+
+When using Windows it is necessary to add several settings so that the Windows terminal (powershell) loads the environment variables used by the Anaconda distribution. This will enable us to switch to a different conda environment, for example. These are my settings:
+
+Setting | Value | Description
+------- | ----- | -----------
+terminal.integrated.shell.windows | "C:\\Windows\\System32\\cmd.exe" | Full path to command shell.
+terminal.integrated.cwd | "C:\\Local_data\\Python" | Path to default working directory.
+terminal.integrated.shellArgs.windows | ["/K C:\\...\\Anaconda3\\Scripts\\activate.bat"] | Sets up correct environment variables.
 
 ## Layout
 
